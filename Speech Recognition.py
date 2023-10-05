@@ -482,12 +482,12 @@ print("Saved model to disk")
 
 
 from tensorflow.keras.models import Sequential, model_from_json
-json_file = open('/content/CNN_model.json', 'r')
+json_file = open('CNN_model.json', 'r')
 loaded_model_json = json_file.read()
 json_file.close()
 loaded_model = model_from_json(loaded_model_json)
 # load weights into new model
-loaded_model.load_weights("/content/best_model1_weights.h5")
+loaded_model.load_weights("best_model1_weights.h5")
 print("Loaded model from disk")
 
 
@@ -521,21 +521,21 @@ print("Done")
 
 
 from tensorflow.keras.models import Sequential, model_from_json
-json_file = open('/content/CNN_model.json', 'r')
+json_file = open('CNN_model.json', 'r')
 loaded_model_json = json_file.read()
 json_file.close()
 loaded_model = model_from_json(loaded_model_json)
 # load weights into new model
-loaded_model.load_weights("/content/best_model1_weights.h5")
+loaded_model.load_weights("best_model1_weights.h5")
 print("Loaded model from disk")
 
 
 import pickle
 
-with open('/content/scaler2.pickle', 'rb') as f:
+with open('scaler2.pickle', 'rb') as f:
     scaler2 = pickle.load(f)
 
-with open('/content/encoder2.pickle', 'rb') as f:
+with open('encoder2.pickle', 'rb') as f:
     encoder2 = pickle.load(f)
 
 
@@ -574,7 +574,7 @@ def get_predict_feat(path):
     return final_result
 
 
-res=get_predict_feat("/content/drive/My Drive/Datasets/Ravdess/audio_speech_actors_01-24/Actor_01/03-01-07-01-01-01-01.wav")
+res=get_predict_feat("Datasets/Ravdess/audio_speech_actors_01-24/Actor_01/03-01-07-01-01-01-01.wav")
 print(res.shape)
 
 
@@ -587,4 +587,4 @@ def prediction(path1):
 
 
 
-prediction("/content/drive/My Drive/Datasets/Ravdess/audio_speech_actors_01-24/Actor_02/03-01-01-01-01-01-02.wav")    
+prediction("Datasets/Ravdess/audio_speech_actors_01-24/Actor_02/03-01-01-01-01-01-02.wav")    
